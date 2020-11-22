@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elvira - ISS Finder App</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/screen.css">
+
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+    
+    <script src="script/app.js"></script>
+</head>
+<body>
+    <div class="c-app-header">
+        <div class="o-container">
+            <h1 class="c-app-header__title">Elvira</h1>
+        </div>
+    </div>
+    <div class="o-container c-app-main">
+        <h2>Where is the ISS?</h2>
+        <div id="c-map"></div>
+        <div class="c-app-main__content">
+            <p>Latitude: <span class="js-latitude"></span></p>
+            <p>Longitude: <span class="js-longitude"></span></p>
+            <p>Altitude: <span class="js-altitude"></span> miles</p>
+            <p>Velocity: <span class="js-velocity"></span> mph</p>
+        </div>
+    </div>
+    <div class="o-container" style="margin-top: 16px;">
+        <button class="js-darkmode">Dark mode test</button>
+    </div>
+</body>
+</html>

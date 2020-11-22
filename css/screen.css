@@ -401,9 +401,11 @@ select {
 }
 
 .c-main__subscribe {
-    display: block;
+    display: flex;
+    align-items: center;
     max-width: 570px;
     margin-top: 32px;
+    margin-bottom: 16px;
 }
 
 .c-main__subscribe-input {
@@ -413,7 +415,7 @@ select {
     margin-right: 24px;
     border: none;
     border-bottom: 1px solid var(--color-neutral-x-dark);
-    margin-bottom: 16px;
+    outline: none;
 }
 
 @media(min-width: 528px) {
@@ -461,6 +463,82 @@ select {
 
 .c-main__subscribe-button:hover:after {
     width: 100%;
+}
+
+/*
+    Component: App Header
+    ---
+    Main app header of the website
+*/
+
+.c-app-header {
+    background: var(--color-alpha);
+    padding: 0 16px;
+}
+
+.c-app-header__title {
+    font-size: 20px;
+    letter-spacing: 1px;
+    color: white;
+    font-weight: 400;
+    padding: 16px 0;
+}
+
+@media(min-width: 536px) {
+    .c-app-header__title {
+        font-size: 28px;
+    }
+}
+
+/*
+    Component: App Main
+    ---
+    App main of the website
+*/
+
+.c-app-main {
+}
+
+.c-app-main h2 {
+    font-size: 32px;
+    text-align: center;
+}
+
+.c-app-main__content {
+    margin-top: 8px;
+    margin-left: 16px;
+}
+
+@media(min-width: 1232px) {
+    .c-app-main {
+        display: grid;
+        grid-template-columns: 1fr 220px;
+    }
+
+    .c-app-main h2 {
+        grid-column: 1 / span 2;
+    }
+    
+    .c-app-main__content {
+        margin-top: 0;
+        margin-left: 8px;
+    }
+}
+
+.c-app-main__content p {
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+    Component: Map
+    ---
+    Main map of the website
+*/
+
+#c-map {
+    height: 800px;
 }
 
 /*------------------------------------*\
