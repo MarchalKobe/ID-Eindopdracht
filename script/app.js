@@ -56,7 +56,7 @@ const init = () => {
     darkmode = true;
     toggleDarkmode();
     showISS();
-    setInterval(showISS, 1000);
+    setInterval(showISS, 3000);
 
     listenToDarkMode();
 };
