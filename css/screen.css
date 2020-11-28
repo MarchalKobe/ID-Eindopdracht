@@ -9,11 +9,17 @@
 :root {
     --color-alpha: #A3333D;
 
+    --color-neutral-xx-light: white;
     --color-neutral-x-light: #F0DDDE;
     --color-neutral-light: #A39697;
     --color-neutral: #706768;
     --color-neutral-dark: #575051;
     --color-neutral-x-dark: #242121;
+}
+
+:root .c-darkmode {
+    --color-alpha: #242121;
+    --color-neutral-x-dark: white;
 }
 
 /*------------------------------------*\
@@ -40,6 +46,10 @@ html {
 *:before,
 *:after {
     box-sizing: inherit;
+}
+
+.c-darkmode {
+    background: #242121;
 }
 
 /*
@@ -310,7 +320,7 @@ select {
 .c-header__title {
     font-size: 20px;
     letter-spacing: 1px;
-    color: white;
+    color: var(--color-neutral-xx-light);
     font-weight: 400;
     padding-top: 32px;
     margin-bottom: 8px;
@@ -320,7 +330,7 @@ select {
 .c-header__subtitle {
     font-size: 24px;
     line-height: 32px;
-    color: white;
+    color: var(--color-neutral-xx-light);
     font-weight: 600;
     text-align: center;
 }
@@ -409,13 +419,25 @@ select {
 }
 
 .c-main__subscribe-input {
-    font-family: "Montserrat";
-    font-size: 24px;
+    font-family: inherit;
+    font-size: 18px;
     width: 100%;
     margin-right: 24px;
     border: none;
     border-bottom: 1px solid var(--color-neutral-x-dark);
     outline: none;
+}
+
+.c-main__subscribe-button {
+    position: relative;
+    font-size: 20px;
+    background: var(--color-alpha);
+    color: var(--color-neutral-xx-light);
+    padding: 8px 16px;
+    border-radius: 12px;
+    cursor: pointer;
+    overflow: hidden;
+    min-width: 136px;
 }
 
 @media(min-width: 528px) {
@@ -426,18 +448,15 @@ select {
     .c-main__subscribe-button-input {
         margin: auto;
     }
-}
 
-.c-main__subscribe-button {
-    position: relative;
-    font-size: 24px;
-    background: var(--color-alpha);
-    color: white;
-    padding: 8px 16px;
-    border-radius: 12px;
-    cursor: pointer;
-    overflow: hidden;
-    width: 224px;
+    .c-main__subscribe-input {
+        font-size: 24px;
+    }
+
+    .c-main__subscribe-button {
+        font-size: 24px;
+        min-width: 160px;
+    }
 }
 
 .c-main__subscribe-button span {
@@ -458,7 +477,7 @@ select {
 }
 
 .c-main__subscribe-button:hover {
-    color: white;
+    color: var(--color-neutral-xx-light);
 }
 
 .c-main__subscribe-button:hover:after {
@@ -476,12 +495,23 @@ select {
     padding: 0 16px;
 }
 
+.c-app-header__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.c-darkmode .c-app-header {
+    border-bottom: 1px solid var(--color-neutral-dark);
+}
+
 .c-app-header__title {
     font-size: 20px;
     letter-spacing: 1px;
-    color: white;
+    color: var(--color-neutral-xx-light);
     font-weight: 400;
     padding: 16px 0;
+    margin: 0;
 }
 
 @media(min-width: 536px) {
@@ -500,8 +530,10 @@ select {
 }
 
 .c-app-main h2 {
+    color: var(--color-neutral-x-dark);
     font-size: 32px;
     text-align: center;
+    padding-top: 16px;
 }
 
 .c-app-main__content {
@@ -526,6 +558,7 @@ select {
 }
 
 .c-app-main__content p {
+    color: var(--color-neutral-x-dark);
     font-size: 18px;
     margin: 0;
     padding: 0;
@@ -539,6 +572,64 @@ select {
 
 #c-map {
     height: 800px;
+    border: 1px solid white;
+}
+
+/*
+    Component: Toggle
+    ---
+    Darkmode toggle of the website
+*/
+
+.c-toggle {
+    display: flex;
+    align-items: center;
+}
+
+.c-toggle__text {
+    margin: 0;
+    margin-right: 8px;
+    color: var(--color-neutral-xx-light);
+    font-size: 20px;
+}
+
+.c-label {
+    margin-bottom: 0;
+    font-size: 14px;
+    line-height: 16px;
+    color: var(--color-neutral-xx-light);
+}
+
+.c-custom-toggle__fake-input {
+    display: block;
+    height: 16px;
+    width: 48px;
+    border-radius: 32px;
+    background: var(--color-neutral-xx-light);
+    border: 1px solid var(--color-neutral-x-dark);
+    cursor: pointer;
+}
+
+.c-custom-toggle__fake-input::after {
+    top: -5px;
+    left: -1px;
+    position: relative;
+    display: block;
+    content: '';
+    height: 24px;
+    width: 24px;
+    border-radius: 24px;
+    background: var(--color-neutral-x-dark);
+    transition: 75ms all ease-in;
+}
+
+.c-darkmode .c-custom-toggle__fake-input::after {
+    /* border: 3px solid #A3333D; */
+    background: #A3333D;
+}
+
+.c-option--hidden:checked + .c-custom-toggle .c-custom-toggle__fake-input::after {
+    transform: translate(24px,0);
 }
 
 /*------------------------------------*\

@@ -12,19 +12,23 @@
     <link rel="stylesheet" href="css/screen.css">
 
     <!-- Leaflet -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-    crossorigin=""/>
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-    crossorigin=""></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
     
     <script src="script/app.js"></script>
 </head>
-<body>
+<body class="c-darkmode">
     <div class="c-app-header">
-        <div class="o-container">
+        <div class="o-container c-app-header__content">
             <h1 class="c-app-header__title">Elvira</h1>
+            <div class="c-toggle">
+                <p class="c-toggle__text">Darkmode</p>
+                <input class="js-darkmode o-hide-accessible c-option--hidden" type="checkbox" id="darkmode">
+                <label class="c-label c-custom-toggle" for="darkmode">
+                    <span class="c-custom-toggle__fake-input">
+                    </span>
+                </label>
+            </div>
         </div>
     </div>
     <div class="o-container c-app-main">
@@ -36,9 +40,6 @@
             <p>Altitude: <span class="js-altitude"></span> miles</p>
             <p>Velocity: <span class="js-velocity"></span> mph</p>
         </div>
-    </div>
-    <div class="o-container" style="margin-top: 16px;">
-        <button class="js-darkmode">Dark mode test</button>
     </div>
 </body>
 </html>
