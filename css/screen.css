@@ -421,7 +421,6 @@ select {
     display: flex;
     align-items: center;
     max-width: 570px;
-    margin-top: 32px;
     margin-bottom: 16px;
 }
 
@@ -436,6 +435,10 @@ select {
     outline: none;
 }
 
+.c-main__subscribe-input-error {
+    border-bottom: 1px solid var(--color-alpha);
+}
+
 .c-main__subscribe-button {
     position: relative;
     font-size: 20px;
@@ -443,6 +446,7 @@ select {
     background: var(--color-alpha);
     color: var(--color-neutral-xx-light);
     padding: 8px 16px;
+    border: none;
     border-radius: 12px;
     cursor: pointer;
     overflow: hidden;
@@ -493,6 +497,17 @@ select {
 
 .c-main__subscribe-button:hover:after {
     width: 100%;
+}
+
+.c-main__subscribe-error {
+    margin: 0;
+    margin-top: 32px;
+    padding: 0;
+    text-align: start;
+    font-size: 22px;
+    line-height: 30px;
+    color: var(--color-alpha);
+    font-weight: 600;
 }
 
 /*

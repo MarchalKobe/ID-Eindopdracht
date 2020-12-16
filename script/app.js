@@ -1,5 +1,6 @@
 let map, tiles, marker;
 let html_latitude, html_longitude, html_altitude, html_velocity, html_body;
+let html_subscribe_error, html_subscribe_email, html_subscribe_submit;
 let html_mockup;
 let darkmode;
 
@@ -76,12 +77,38 @@ const changeMockup = () => {
     };
 };
 
+const emailIsValid = (email) => {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+const listenToSubscribeSubmit = () => {
+    html_subscribe_submit = document.querySelector(".js-subscribe-submit");
+    html_subscribe_email = document.querySelector(".js-subscribe-email");
+    html_subscribe_error = document.querySelector(".js-subscribe-error");
+
+    html_subscribe_submit.addEventListener("click", (event) => {
+        if(html_subscribe_email.value == "") {
+            event.preventDefault();
+            html_subscribe_email.classList.add("c-main__subscribe-input-error");
+            html_subscribe_error.innerHTML = "Email must be filled in.";
+        } else if (!emailIsValid(html_subscribe_email.value)) {
+            event.preventDefault();
+            html_subscribe_email.classList.add("c-main__subscribe-input-error");
+            html_subscribe_error.innerHTML = "Email is not right format.";
+        } else {
+            html_subscribe_email.classList.remove("c-main__subscribe-input-error");
+            html_subscribe_error.innerHTML = "";
+        };
+    });
+};
+
 const init = () => {
     html_mockup = document.querySelector(".js-mockup");
     
     if(html_mockup) {
         darkmode = false;
         setInterval(changeMockup, 5000);
+        listenToSubscribeSubmit();
         return;
     };
 

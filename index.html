@@ -49,10 +49,12 @@
                 Stay informed about the development of this
                 project and when it releases.
             </p>
-            <div class="c-main__subscribe">
-                <input class="c-main__subscribe-input" type="text" placeholder="Email">
-                <a class="c-main__subscribe-button"><span>Subscribe!</span></a>
-            </div>
+            <p class="js-subscribe-error c-main__subscribe-error"></p>
+            <form class="c-main__subscribe">
+                <input class="js-subscribe-email c-main__subscribe-input" type="email" placeholder="Email" required>
+                <button class="js-subscribe-submit c-main__subscribe-button"><span>Subscribe!</span></button>
+                <br/>
+            </form>
         </div>
     </div>
 </body>
