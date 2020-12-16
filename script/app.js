@@ -12,8 +12,6 @@ const showISS = async () => {
     url = "https://api.wheretheiss.at/v1/satellites/25544";
     const data = await fetch(url).then(response => response.json()).catch(error => console.error("An error occured: ", error));
     let {latitude, longitude, altitude, velocity} = data;
-    console.log(latitude);
-    console.log(longitude);
     marker.setLatLng([latitude, longitude]);
 
     html_latitude.innerHTML = latitude.toFixed(2);
@@ -28,7 +26,9 @@ const toggleDarkmode = () => {
     let url, attribution;
 
     if(darkmode == false) {
-        url = "https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png";
+        // url = "https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png";
+        // Van map veranderd omdat deze niet wou laden als ik website online zet
+        url = "https://api.maptiler.com/maps/nl-cartiqo-dark/{z}/{x}/{y}.png?key=AMEkAZrxDqNoobegCaZf";
         attribution = '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors';
         html_body.classList.add("c-darkmode");
 
@@ -41,7 +41,9 @@ const toggleDarkmode = () => {
 
         darkmode = true;
     } else {
-        url = "https://tiles.stadiamaps.com/tiles/outdoors/{z}/{x}/{y}{r}.png";
+        // url = "https://tiles.stadiamaps.com/tiles/outdoors/{z}/{x}/{y}{r}.png";
+        // Van map veranderd omdat deze niet wou laden als ik website online zet
+        url = "https://api.maptiler.com/maps/basic/{z}/{x}/{y}.png?key=AMEkAZrxDqNoobegCaZf";
         attribution = '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors';
         html_body.classList.remove("c-darkmode");
         

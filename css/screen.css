@@ -319,6 +319,7 @@ select {
 
 .c-header__title {
     font-size: 20px;
+    line-height: 28px;
     letter-spacing: 1px;
     color: var(--color-neutral-xx-light);
     font-weight: 400;
@@ -330,6 +331,7 @@ select {
 .c-header__subtitle {
     font-size: 24px;
     line-height: 32px;
+    line-height: 32px;
     color: var(--color-neutral-xx-light);
     font-weight: 600;
     text-align: center;
@@ -338,11 +340,13 @@ select {
 @media(min-width: 536px) {
     .c-header__title {
         font-size: 28px;
+        line-height: 36px;
         margin-bottom: 32px;
     }
 
     .c-header__subtitle {
         font-size: 32px;
+        line-height: 40px;
     }
 }
 
@@ -360,6 +364,7 @@ select {
 
 .c-header__mockup-release {
     font-size: 24px;
+    line-height: 32px;
     margin-top: 16px;
 }
 
@@ -387,19 +392,21 @@ select {
 
 .c-main__item-title {
     font-size: 24px;
+    line-height: 32px;
     margin-top: 24px;
     margin-bottom: 8px;
 }
 
 .c-main__item-text {
     font-size: 18px;
-    line-height: 24px;
+    line-height: 26px;
     margin: 0;
 }
 
 @media(min-width: 536px) {
     .c-main__item-title {
         font-size: 32px;
+        line-height: 40px;
         margin-top: 56px;
         margin-bottom: 18px;
     }
@@ -421,6 +428,7 @@ select {
 .c-main__subscribe-input {
     font-family: inherit;
     font-size: 18px;
+    line-height: 26px;
     width: 100%;
     margin-right: 24px;
     border: none;
@@ -431,6 +439,7 @@ select {
 .c-main__subscribe-button {
     position: relative;
     font-size: 20px;
+    line-height: 28px;
     background: var(--color-alpha);
     color: var(--color-neutral-xx-light);
     padding: 8px 16px;
@@ -451,10 +460,12 @@ select {
 
     .c-main__subscribe-input {
         font-size: 24px;
+        line-height: 32px;
     }
 
     .c-main__subscribe-button {
         font-size: 24px;
+        line-height: 32px;
         min-width: 160px;
     }
 }
@@ -507,6 +518,7 @@ select {
 
 .c-app-header__title {
     font-size: 20px;
+    line-height: 28px;
     letter-spacing: 1px;
     color: var(--color-neutral-xx-light);
     font-weight: 400;
@@ -517,6 +529,7 @@ select {
 @media(min-width: 536px) {
     .c-app-header__title {
         font-size: 28px;
+        line-height: 36px;
     }
 }
 
@@ -526,12 +539,10 @@ select {
     App main of the website
 */
 
-.c-app-main {
-}
-
 .c-app-main h2 {
     color: var(--color-neutral-x-dark);
     font-size: 32px;
+    line-height: 40px;
     text-align: center;
     padding-top: 16px;
 }
@@ -560,6 +571,7 @@ select {
 .c-app-main__content p {
     color: var(--color-neutral-x-dark);
     font-size: 18px;
+    line-height: 26px;
     margin: 0;
     padding: 0;
 }
@@ -591,6 +603,7 @@ select {
     margin-right: 8px;
     color: var(--color-neutral-xx-light);
     font-size: 20px;
+    line-height: 28px;
 }
 
 .c-label {
@@ -624,12 +637,11 @@ select {
 }
 
 .c-darkmode .c-custom-toggle__fake-input::after {
-    /* border: 3px solid #A3333D; */
     background: #A3333D;
 }
 
 .c-option--hidden:checked + .c-custom-toggle .c-custom-toggle__fake-input::after {
-    transform: translate(24px,0);
+    transform: translate(24px, 0);
 }
 
 /*------------------------------------*\
